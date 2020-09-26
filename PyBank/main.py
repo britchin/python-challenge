@@ -2,10 +2,10 @@ import os
 import csv
 
 #joining path
-budget_data = os.path.join("Resources", "budget_data.csv")
+PyBank_BudgetData = os.path.join("Resources", "PyBank_BudgetData.csv")
 
 # open and read csv
-with open(budget_data) as csvfile:
+with open(PyBank_BudgetData) as csvfile:
     csvreader = csv.reader(csvfile, delimiter=",")
     print(csvreader)
     csv_header=next(csvreader)
