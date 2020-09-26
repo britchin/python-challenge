@@ -64,7 +64,7 @@ with open(PyBank_BudgetData) as csvfile:
 
     # output to a text file
 
-    file = open("output.txt","w")
+    file = open("Solution.txt","w")
 
     file.write("Financial Analysis" + "\n")
 
