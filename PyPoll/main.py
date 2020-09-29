@@ -43,7 +43,6 @@ with open(csvpath) as csvfile:
     for candidate in candidate_votes:
         print(candidate + " " + str(round(((candidate_votes[candidate]/votes)*100))) + "%" + " (" + str(candidate_votes[candidate]) + ")") 
         candidate_results = (candidate + " " + str(round(((candidate_votes[candidate]/votes)*100))) + "%" + " (" + str(candidate_votes[candidate]) + ")") 
-    
 candidate_votes
 
 winner = sorted(candidate_votes.items(),)
