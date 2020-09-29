@@ -3,6 +3,7 @@ import csv
 
 #joining path
 PyBank_BudgetData = os.path.join("Resources", "PyBank_BudgetData.csv")
+csvpath_output = os.path.join("Analysis", "PyBankOutput.txt")
 
 # open and read csv
 with open(PyBank_BudgetData) as csvfile:
@@ -64,20 +65,19 @@ with open(PyBank_BudgetData) as csvfile:
 
     # output to a text file
 
-    file = open("Solution.txt","w")
+    with open(csvpath_output, "w") as txt_file:
 
-    file.write("Financial Analysis" + "\n")
+        txt_file.write("Financial Analysis" + "\n")
 
-    file.write("...................................................................................." + "\n")
+        txt_file.write("...................................................................................." + "\n")
 
-    file.write("Total Months: " + str(TotMonths) + "\n")
+        txt_file.write("Total Months: " + str(TotMonths) + "\n")
 
-    file.write("Total: " + "$" + str(sum(Profit)) + "\n")
+        txt_file.write("Total: " + "$" + str(sum(Profit)) + "\n")
 
-    file.write("Average Change: " + "$" + str(RevAvg) + "\n")
+        txt_file.write("Average Change: " + "$" + str(RevAvg) + "\n")
 
-    file.write("Greatest Increase in Profits: " + str(Months[RevChange.index(max(RevChange))+1]) + " " + "$" + str(GIIP) + "\n")
+        txt_file.write("Greatest Increase in Profits: " + str(Months[RevChange.index(max(RevChange))+1]) + " " + "$" + str(GIIP) + "\n")
 
-    file.write("Greatest Decrease in Profits: " + str(Months[RevChange.index(min(RevChange))+1]) + " " + "$" + str(GDIP) + "\n")
+        txt_file.write("Greatest Decrease in Profits: " + str(Months[RevChange.index(min(RevChange))+1]) + " " + "$" + str(GDIP) + "\n")
 
-    file.close()
